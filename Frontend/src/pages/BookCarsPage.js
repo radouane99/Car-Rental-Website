@@ -10,8 +10,8 @@ import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
 import SearchContext from "../SearchContext";
-const dotenv = require("dotenv");
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
+// const dotenv = require("dotenv");
+// dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 
 function BookCars() {
