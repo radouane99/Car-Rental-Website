@@ -8,7 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install && npm install path-browserify fs os-browserify
+RUN npm install
 
 
 EXPOSE 3000
