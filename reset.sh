@@ -1,6 +1,6 @@
 #!/bin/bash
 
 docker compose down
-git 
+git stash
 git pull
 docker compose up --build -d
