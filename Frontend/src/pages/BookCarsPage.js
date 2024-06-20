@@ -11,14 +11,13 @@ import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
 import SearchContext from "../SearchContext";
 
-var backendUrl="http://172.20.177.219:8000";
 function BookCars() {
   const { searchResults, setSearchResults } = useContext(SearchContext);
   const [cars, setCars] = useState();
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(backendUrl+"/api/cars").then((response) => {
+    axios.get("http://172.20.177.219:8000/api/cars").then((response) => {
       setCars(response.data.data);
       setLoading(false);
     });
