@@ -10,7 +10,8 @@ import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
 import SearchContext from "../SearchContext";
-import  "../env";
+const dotenv = require("dotenv");
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 
 function BookCars() {
@@ -19,7 +20,7 @@ function BookCars() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(global.backendUrl+"/api/cars").then((response) => {
+    axios.get(process.env.BACKEND_URL+"/api/cars").then((response) => {
       setCars(response.data.data);
       setLoading(false);
     });
