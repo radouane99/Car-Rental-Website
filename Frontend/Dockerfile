@@ -10,6 +10,7 @@ WORKDIR /app
 
 RUN <<EOF
 npm install
+npm install path-browserify os-browserify crypto-browserify
 EOF
 
 EXPOSE 3000
