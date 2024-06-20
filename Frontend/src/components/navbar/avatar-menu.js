@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import  "../env";
 
 const AvatarMenu = () => {
   const { t } = useTranslation();
@@ -32,7 +33,7 @@ const AvatarMenu = () => {
     e.preventDefault();
 
     axios
-      .get("http://127.0.0.1:8000/api/logout")
+      .get(backendUrl+"/api/logout")
       .then((response) => {
         localStorage.clear();
         //setIsLoggedIn(false);

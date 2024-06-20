@@ -17,6 +17,7 @@ import { EditIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import  "../env";
 
 function ProfileDrawer() {
   const { t } = useTranslation();
@@ -44,7 +45,7 @@ function ProfileDrawer() {
 
   const handleSubmit = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/user/${user_id}`, formData)
+      .put(backendUrl+`/api/user/${user_id}`, formData)
       .then((response) => {
         console.log(response.data);
         const updatedUser = response.data.data;

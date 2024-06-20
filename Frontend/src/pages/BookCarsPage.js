@@ -10,8 +10,8 @@ import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
 import SearchContext from "../SearchContext";
+import  "../env";
 
-var backendUrl="http://172.19.156.216:8000";
 
 function BookCars() {
   const { searchResults, setSearchResults } = useContext(SearchContext);
@@ -19,7 +19,7 @@ function BookCars() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://172.19.156.216:8000/api/cars").then((response) => {
+    axios.get(backendUrl+"/api/cars").then((response) => {
       setCars(response.data.data);
       setLoading(false);
     });

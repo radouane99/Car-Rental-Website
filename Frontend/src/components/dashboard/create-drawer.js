@@ -16,6 +16,7 @@ import {
 import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
 import axios from "axios";
+import  "../env";
 
 function CreateItemDrawer({ dataType, onUpdate }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,7 +31,7 @@ function CreateItemDrawer({ dataType, onUpdate }) {
   const handleSubmit = () => {
     console.log(formData);
     axios
-      .post(`http://127.0.0.1:8000/api/${dataType}`, formData)
+      .post(backendUrl+`/api/${dataType}`, formData)
       .then((response) => {
         console.log(response.data.data);
         onClose();
