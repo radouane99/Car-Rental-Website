@@ -1,9 +1,11 @@
 services:
   frontend:
+    name: car-rental-frontend
     build: ./Frontend
     ports:
       - 3000:3000
   database:
+    name: car-rental-database
     image: mariadb:10.3
     ports:
       - 3306:3306
@@ -13,6 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: car_rental
   backend:
+    name: car-rental-backend
     build: ./Backend
     ports:
      - 8000:8000
