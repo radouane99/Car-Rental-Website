@@ -12,8 +12,6 @@ import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
 import SearchContext from "../SearchContext";
-import dotenv from 'dotenv';
-import path from 'path';
 
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
