@@ -9,8 +9,8 @@ COPY . /app
 WORKDIR /app
 
 RUN npm install \
-    && npm uninstall -g dotenv \
-    && npm audit fix --force
+    && npm uninstall -g dotenv \  
+    && npm audit fix --force  
 
 EXPOSE 3000
 
