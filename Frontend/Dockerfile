@@ -9,7 +9,7 @@ COPY . /app
 WORKDIR /app
 
 RUN npm install \
-    && npm install path-browserify os-browserify crypto-browserify
+    && npm uninstall -g dotenv
 
 EXPOSE 3000
 
