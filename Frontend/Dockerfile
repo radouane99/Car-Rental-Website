@@ -10,7 +10,7 @@ WORKDIR /app
 
 RUN npm install \
     && npm uninstall -g dotenv \
-    && npm install -g npm@10.8.1 \
+    && npm uninstall -g npm@10.8.1 \
     && npm audit fix --force 
 
 
