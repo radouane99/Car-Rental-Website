@@ -26,7 +26,6 @@ import Navbar from "../components/navbar/Navbar";
 import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
-import  "../env";
 
 function Rent() {
   const { t } = useTranslation();
