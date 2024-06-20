@@ -26,6 +26,7 @@ import Navbar from "../components/navbar/Navbar";
 import AvatarMenu from "../components/navbar/avatar-menu";
 import HomeSidebarContent from "../components/home/home-sidebar-content";
 import NavbarLinks from "../components/navbar/NavbarLinks";
+import  "../env";
 
 function Rent() {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ function Rent() {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/cars/${params.id}`)
+      .get(backendUrl+`/api/cars/${params.id}`)
       .then((response) => {
         setCar(response.data.data[0]);
         setLoading(false);
@@ -107,7 +108,7 @@ function Rent() {
       console.log(rent);
       if (rentalDate.current.value != "" && returnDate.current.value != "") {
         axios
-          .post("http://127.0.0.1:8000/api/rents", rent)
+          .post(backendUrl+"/api/rents", rent)
           .then((response) => {
             showToast(
               toast,
