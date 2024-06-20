@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build: ./Frontend
+    ports:
+      - 3000:3000
+  database:
+    image: mariadb:10.3
+    ports:
+      - 3306:3306
+    volumes:
+      - ./Database/car_rental.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABSE: car_rental
+  backend:
+    build: ./Backend
+    ports:
+     - 8000:8000
