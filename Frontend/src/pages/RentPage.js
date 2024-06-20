@@ -44,7 +44,7 @@ function Rent() {
 
   useEffect(() => {
     axios
-      .get(backendUrl+`/api/cars/${params.id}`)
+      .get(global.backendUrl+`/api/cars/${params.id}`)
       .then((response) => {
         setCar(response.data.data[0]);
         setLoading(false);
@@ -108,7 +108,7 @@ function Rent() {
       console.log(rent);
       if (rentalDate.current.value != "" && returnDate.current.value != "") {
         axios
-          .post(backendUrl+"/api/rents", rent)
+          .post(global.backendUrl+"/api/rents", rent)
           .then((response) => {
             showToast(
               toast,

@@ -19,7 +19,7 @@ function BookCars() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(backendUrl+"/api/cars").then((response) => {
+    axios.get(global.backendUrl+"/api/cars").then((response) => {
       setCars(response.data.data);
       setLoading(false);
     });

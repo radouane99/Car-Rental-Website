@@ -23,7 +23,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     axios
-      .post(backendUrl+"/api/login", {
+      .post(global.backendUrl+"/api/login", {
         email: email.current.value,
       })
       .then((response) => {

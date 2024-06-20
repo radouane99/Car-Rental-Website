@@ -45,7 +45,7 @@ function ProfileDrawer() {
 
   const handleSubmit = () => {
     axios
-      .put(backendUrl+`/api/user/${user_id}`, formData)
+      .put(global.backendUrl+`/api/user/${user_id}`, formData)
       .then((response) => {
         console.log(response.data);
         const updatedUser = response.data.data;

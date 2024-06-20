@@ -33,7 +33,7 @@ const AvatarMenu = () => {
     e.preventDefault();
 
     axios
-      .get(backendUrl+"/api/logout")
+      .get(global.backendUrl+"/api/logout")
       .then((response) => {
         localStorage.clear();
         //setIsLoggedIn(false);

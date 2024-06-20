@@ -32,7 +32,7 @@ const SignUpForm = () => {
 
     const hashedPassword = bcrypt.hashSync(password.current.value);
     axios
-      .post(backendUrl+"/api/signup", {
+      .post(global.backendUrl+"/api/signup", {
         firstname: firstname.current.value,
         lastname: lastname.current.value,
         telephone: telephone.current.value,

@@ -50,13 +50,13 @@ function Dashboard() {
 
   const handleData = (type) => {
     if (type == "Users") {
-      axios.get(backendUrl+"/api/users").then((response) => {
+      axios.get(global.backendUrl+"/api/users").then((response) => {
         setHeader(["id", "firstname", "lastname", "telephone", "email"]);
         setData(response.data.data);
         setType("users");
       });
     } else if (type == "Cars") {
-      axios.get(backendUrl+"/api/cars").then((response) => {
+      axios.get(global.backendUrl+"/api/cars").then((response) => {
         setHeader([
           "id",
           "brand",
@@ -70,7 +70,7 @@ function Dashboard() {
         setType("cars");
       });
     } else if (type == "Rents") {
-      axios.get(backendUrl+"/api/rents").then((response) => {
+      axios.get(global.backendUrl+"/api/rents").then((response) => {
         setHeader([
           "id",
           "rental_date",
@@ -86,7 +86,7 @@ function Dashboard() {
   };
 
   const handleUpdateItem = (itemId, updatedItem) => {
-    const endpoint = backendUrl+`/api/${type}/${itemId}`;
+    const endpoint = global.backendUrl+`/api/${type}/${itemId}`;
 
     axios
       .put(endpoint, updatedItem)
@@ -110,7 +110,7 @@ function Dashboard() {
   };
 
   const handleDelete = (id) => {
-    const endpoint = backendUrl+`/api/${type}/${id}`;
+    const endpoint = global.backendUrl+`/api/${type}/${id}`;
 
     axios
       .delete(endpoint)

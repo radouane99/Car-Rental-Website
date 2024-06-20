@@ -31,7 +31,7 @@ function CreateItemDrawer({ dataType, onUpdate }) {
   const handleSubmit = () => {
     console.log(formData);
     axios
-      .post(backendUrl+`/api/${dataType}`, formData)
+      .post(global.backendUrl+`/api/${dataType}`, formData)
       .then((response) => {
         console.log(response.data.data);
         onClose();

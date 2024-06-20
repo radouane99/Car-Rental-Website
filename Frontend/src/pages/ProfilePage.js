@@ -32,7 +32,7 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get(backendUrl+`/api/users/${user_id}/rents`)
+      .get(global.backendUrl+`/api/users/${user_id}/rents`)
       .then((response) => {
         setRents(response.data.data);
       });
