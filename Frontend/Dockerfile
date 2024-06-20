@@ -8,11 +8,9 @@ COPY . /app
 
 WORKDIR /app
 
-RUN <<EOF
-npm install
-npm install path-browserify os-browserify crypto-browserify
-EOF
+RUN npm install \
+    && npm install path-browserify os-browserify crypto-browserify
 
 EXPOSE 3000
 
-CMD npm start
+CMD ["npm", "start"]
