@@ -8,7 +8,9 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install && npm install --save path-browserify os-browserify
+RUN touch webpack.config.js && npm install path-browserify os-browserify && npm install && npm install --save path-browserify os-browserify && npx webpack --config webpack.config.js
+
+
 
 
 
