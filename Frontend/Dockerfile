@@ -8,10 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN npm install \
-    && npm uninstall -g dotenv \
-    && npm uninstall -g npm@10.8.1 \
-    && npm audit fix --force 
+RUN npm install 
 
 
 EXPOSE 3000
