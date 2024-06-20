@@ -11,7 +11,7 @@ services:
       - ./Database/car_rental.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABSE: car_rental
+      MYSQL_DATABASE: car_rental
   backend:
     build: ./Backend
     ports:
