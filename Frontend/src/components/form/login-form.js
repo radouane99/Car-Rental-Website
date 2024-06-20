@@ -8,7 +8,6 @@ import FormInput from "./form-input";
 import useAuthentication from "../../useAuthentication";
 import { showToast } from "../toast-alert";
 import { useTranslation } from "react-i18next";
-import  "../../env";
 
 const LoginForm = () => {
   const { t } = useTranslation();
@@ -23,7 +22,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     axios
-      .post(global.backendUrl+"/api/login", {
+      .post("http://172.20.177.219:8000/api/login", {
         email: email.current.value,
       })
       .then((response) => {

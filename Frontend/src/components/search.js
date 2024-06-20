@@ -4,7 +4,6 @@ import { useContext, useEffect, useState } from "react";
 import SearchContext from "../SearchContext";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import  "../env";
 
 const SearchInput = ({ type }) => {
   const { t } = useTranslation();
@@ -17,7 +16,7 @@ const SearchInput = ({ type }) => {
     const fetchData = async () => {
       if (["rents", "users", "cars"].includes(type)) {
         try {
-          const response = await axios.get(global.backendUrl+`/api/${type}`);
+          const response = await axios.get(`http://172.20.177.219:8000/api/${type}`);
           if (!cancelRequest) {
             setData(response.data.data);
             setSearchResults([]);

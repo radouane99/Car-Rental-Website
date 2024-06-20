@@ -23,7 +23,6 @@ import Navbar from "../components/navbar/Navbar";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import  "../env";
 
 function Profile() {
   const { t } = useTranslation();
@@ -32,7 +31,7 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get(global.backendUrl+`/api/users/${user_id}/rents`)
+      .get(`http://172.20.177.219:8000/api/users/${user_id}/rents`)
       .then((response) => {
         setRents(response.data.data);
       });

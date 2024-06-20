@@ -7,7 +7,6 @@ import FormButton from "./form-button";
 import FormInput from "./form-input";
 import { showToast } from "../toast-alert";
 import { useTranslation } from "react-i18next";
-import  "../../env";
 
 const SignUpForm = () => {
   const { t } = useTranslation();
@@ -32,7 +31,7 @@ const SignUpForm = () => {
 
     const hashedPassword = bcrypt.hashSync(password.current.value);
     axios
-      .post(global.backendUrl+"/api/signup", {
+      .post("http://172.20.177.219:8000/api/signup", {
         firstname: firstname.current.value,
         lastname: lastname.current.value,
         telephone: telephone.current.value,

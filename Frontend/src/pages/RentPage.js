@@ -43,7 +43,7 @@ function Rent() {
 
   useEffect(() => {
     axios
-      .get(global.backendUrl+`/api/cars/${params.id}`)
+      .get(`http://172.20.177.219:8000/api/cars/${params.id}`)
       .then((response) => {
         setCar(response.data.data[0]);
         setLoading(false);
@@ -107,7 +107,7 @@ function Rent() {
       console.log(rent);
       if (rentalDate.current.value != "" && returnDate.current.value != "") {
         axios
-          .post(global.backendUrl+"/api/rents", rent)
+          .post("http://172.20.177.219:8000/api/rents", rent)
           .then((response) => {
             showToast(
               toast,
