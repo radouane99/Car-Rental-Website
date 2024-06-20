@@ -16,7 +16,7 @@ import {
 import { AddIcon, EditIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
 import axios from "axios";
-import  "../env";
+import  "../../env";
 
 function CreateItemDrawer({ dataType, onUpdate }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

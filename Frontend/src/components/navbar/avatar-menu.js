@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import  "../env";
+import  "../../env";
 
 const AvatarMenu = () => {
   const { t } = useTranslation();

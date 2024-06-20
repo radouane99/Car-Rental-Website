@@ -17,7 +17,7 @@ import { EditIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import  "../env";
+import  "../../env";
 
 function ProfileDrawer() {
   const { t } = useTranslation();

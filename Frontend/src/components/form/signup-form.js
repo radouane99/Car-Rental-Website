@@ -7,7 +7,7 @@ import FormButton from "./form-button";
 import FormInput from "./form-input";
 import { showToast } from "../toast-alert";
 import { useTranslation } from "react-i18next";
-import  "../env";
+import  "../../env";
 
 const SignUpForm = () => {
   const { t } = useTranslation();
